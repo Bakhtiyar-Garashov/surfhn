@@ -15,3 +15,13 @@ type User struct {
 
 	submitted []int32
 }
+
+func NewUser(id int32, createdAt unixTime, karma int32, about string, submitted []int32) *User {
+	return &User{
+		id:        id,
+		createdAt: createdAt,
+		karma:     karma,
+		about:     about,
+		submitted: submitted,
+	}
+}

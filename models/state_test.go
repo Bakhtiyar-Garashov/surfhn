@@ -12,7 +12,7 @@ func TestNewState(t *testing.T) {
 		selected: map[int]struct{}{},
 	}
 
-	got := NewState()
+	got := NewState([]string{"Foo", "Bar", "Baz"}, 42, map[int]struct{}{})
 	// Do we really need DeepEqual here ? TODO
 	if !reflect.DeepEqual(expected, got) {
 		t.Errorf("Expected %v, got %v", expected, got)

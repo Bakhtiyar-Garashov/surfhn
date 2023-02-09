@@ -6,10 +6,10 @@ type State struct {
 	selected map[int]struct{}
 }
 
-func NewState() *State {
+func NewState(choices []string, cursor int, selected map[int]struct{}) *State {
 	return &State{
-		choices:  []string{"Foo", "Bar", "Baz"},
-		cursor:   42,
-		selected: make(map[int]struct{}),
+		choices:  choices,
+		cursor:   cursor,
+		selected: selected,
 	}
 }

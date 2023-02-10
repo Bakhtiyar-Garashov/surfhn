@@ -1,7 +1,5 @@
 package models
 
-import "net/url"
-
 // A story: https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
 
 //	{
@@ -17,7 +15,7 @@ import "net/url"
 //	}
 
 type Story struct {
-	username User
+	username string
 
 	descendants int32
 
@@ -33,10 +31,10 @@ type Story struct {
 
 	entryType string
 
-	url *url.URL
+	url string
 }
 
-func NewStory(username User, descendants int32, id int32, kids []int32, score int32, time UnixTime, title string, entryType string, url *url.URL) *Story {
+func NewStory(username string, descendants int32, id int32, kids []int32, score int32, time UnixTime, title string, url string) *Story {
 	return &Story{
 		username:    username,
 		descendants: descendants,

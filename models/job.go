@@ -1,7 +1,5 @@
 package models
 
-import "net/url"
-
 // job: https://hacker-news.firebaseio.com/v0/item/192327.json?print=pretty
 
 // {
@@ -16,7 +14,7 @@ import "net/url"
 // }
 
 type Job struct {
-	username User
+	username string
 
 	id int32
 
@@ -30,10 +28,10 @@ type Job struct {
 
 	entryType string
 
-	url *url.URL
+	url string
 }
 
-func NewJob(username User, id int32, score int32, text string, time UnixTime, title string, entryType string, url *url.URL) *Job {
+func NewJob(username string, id int32, score int32, text string, time UnixTime, title string, url string) *Job {
 	return &Job{
 		username:  username,
 		id:        id,

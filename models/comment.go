@@ -13,7 +13,7 @@ package models
 // }
 
 type Comment struct {
-	username User
+	username string
 
 	id int32
 
@@ -28,7 +28,7 @@ type Comment struct {
 	entryType string
 }
 
-func NewComment(username User, id int32, kids []int32, parent int32, text string, time UnixTime, entryType string) *Comment {
+func NewComment(username string, id int32, kids []int32, parent int32, text string, time UnixTime) *Comment {
 	return &Comment{
 		username:  username,
 		id:        id,

@@ -15,7 +15,7 @@ package models
 // }
 
 type AskHN struct {
-	username User
+	username string
 
 	descendants int32
 
@@ -34,7 +34,7 @@ type AskHN struct {
 	entryType string
 }
 
-func NewAskHN(username User, descendants, id int32, kids []int32, score int32, text string, time UnixTime, title string, entryType string) *AskHN {
+func NewAskHN(username string, descendants, id int32, kids []int32, score int32, text string, time UnixTime, title string) *AskHN {
 	return &AskHN{
 		username:    username,
 		descendants: descendants,

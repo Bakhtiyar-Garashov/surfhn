@@ -13,12 +13,12 @@ func TestNewStort(t *testing.T) {
 		kids:        []int32{4, 5, 2, 24},
 		score:       111,
 		time:        1175714200,
-		title:       "My YC app: Dropbox - Throw away your USB drive",
+		title:       "How fast Road Runner is ?",
 		entryType:   "story",
-		url:         "http://www.getdropbox.com/u/2/screencast.html",
+		url:         "http://www.speedtest.org/road-runner",
 	}
 
-	got := NewStory("Road Runner", 3, 4, []int32{4, 5, 2, 24}, 111, 1175714200, "My YC app: Dropbox - Throw away your USB drive", "http://www.getdropbox.com/u/2/screencast.html")
+	got := NewStory("Road Runner", 3, 4, []int32{4, 5, 2, 24}, 111, 1175714200, "How fast Road Runner is ?", "http://www.speedtest.org/road-runner")
 
 	if !reflect.DeepEqual(expected, got) {
 		t.Errorf("Expected %v, got %v", expected, got)

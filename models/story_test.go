@@ -1,26 +1,27 @@
 package models
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestNewStort(t *testing.T) {
 	expected := &Story{
-		username:    "Road Runner",
-		descendants: 3,
-		id:          4,
-		kids:        []int32{4, 5, 2, 24},
-		score:       111,
-		time:        1175714200,
-		title:       "How fast Road Runner is ?",
-		entryType:   "story",
-		url:         "http://www.speedtest.org/road-runner",
+		Username:    "Road Runner",
+		Descendants: 3,
+		Id:          4,
+		Kids:        []int32{4, 5, 2, 24},
+		Score:       111,
+		Time:        1175714200,
+		Title:       "How fast Road Runner is ?",
+		EntryType:   "story",
+		Url:         "http://www.speedtest.org/road-runner",
 	}
 
 	got := NewStory("Road Runner", 3, 4, []int32{4, 5, 2, 24}, 111, 1175714200, "How fast Road Runner is ?", "http://www.speedtest.org/road-runner")
 
-	if !reflect.DeepEqual(expected, got) {
+	if !cmp.Equal(expected, got) {
 		t.Errorf("Expected %v, got %v", expected, got)
 	}
 }

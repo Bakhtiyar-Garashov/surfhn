@@ -1,20 +1,21 @@
 package models
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestNewState(t *testing.T) {
 	expected := &State{
-		choices:  []string{"Foo", "Bar", "Baz"},
-		cursor:   42,
-		selected: map[int]struct{}{},
+		Choices:  []string{"Foo", "Bar", "Baz"},
+		Cursor:   42,
+		Selected: map[int]struct{}{},
 	}
 
 	got := NewState([]string{"Foo", "Bar", "Baz"}, 42, map[int]struct{}{})
 	// Do we really need DeepEqual here ? TODO
-	if !reflect.DeepEqual(expected, got) {
+	if !cmp.Equal(expected, got) {
 		t.Errorf("Expected %v, got %v", expected, got)
 	}
 

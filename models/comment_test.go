@@ -1,24 +1,25 @@
 package models
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestNewComment(t *testing.T) {
 	expected := &Comment{
-		username:  "Road Runner",
-		id:        2,
-		kids:      []int32{1, 2, 3},
-		parent:    3,
-		text:      "HN: <h1>Hello world</h1>",
-		time:      58378738,
-		entryType: "comment",
+		Username:  "Road Runner",
+		Id:        2,
+		Kids:      []int32{1, 2, 3},
+		Parent:    3,
+		Text:      "HN: <h1>Hello world</h1>",
+		Time:      58378738,
+		EntryType: "comment",
 	}
 
 	got := NewComment("Road Runner", 2, []int32{1, 2, 3}, 3, "HN: <h1>Hello world</h1>", 58378738)
 
-	if !reflect.DeepEqual(expected, got) {
+	if !cmp.Equal(expected, got) {
 		t.Errorf("Expected %v, got %v", expected, got)
 	}
 

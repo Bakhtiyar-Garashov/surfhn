@@ -15,35 +15,35 @@ package models
 //	}
 
 type Story struct {
-	username string
+	Username string
 
-	descendants int32
+	Descendants int32
 
-	id int32
+	Id int32
 
-	kids []int32
+	Kids []int32
 
-	score int32
+	Score int32
 
-	time UnixTime
+	Time UnixTime
 
-	title string
+	Title string
 
-	entryType string
+	EntryType string
 
-	url string
+	Url string
 }
 
 func NewStory(username string, descendants int32, id int32, kids []int32, score int32, time UnixTime, title string, url string) *Story {
 	return &Story{
-		username:    username,
-		descendants: descendants,
-		id:          id,
-		kids:        kids,
-		score:       score,
-		time:        time,
-		title:       title,
-		entryType:   "story",
-		url:         url,
+		Username:    username,
+		Descendants: descendants,
+		Id:          id,
+		Kids:        kids,
+		Score:       score,
+		Time:        time,
+		Title:       title,
+		EntryType:   "story",
+		Url:         url,
 	}
 }

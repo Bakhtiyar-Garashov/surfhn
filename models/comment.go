@@ -13,29 +13,29 @@ package models
 // }
 
 type Comment struct {
-	username string
+	Username string
 
-	id int32
+	Id int32
 
-	kids []int32
+	Kids []int32
 
-	parent int32
+	Parent int32
 
-	text string
+	Text string
 
-	time UnixTime
+	Time UnixTime
 
-	entryType string
+	EntryType string
 }
 
 func NewComment(username string, id int32, kids []int32, parent int32, text string, time UnixTime) *Comment {
 	return &Comment{
-		username:  username,
-		id:        id,
-		kids:      kids,
-		parent:    parent,
-		text:      text,
-		time:      time,
-		entryType: "comment",
+		Username:  username,
+		Id:        id,
+		Kids:      kids,
+		Parent:    parent,
+		Text:      text,
+		Time:      time,
+		EntryType: "comment",
 	}
 }

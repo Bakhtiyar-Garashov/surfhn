@@ -14,32 +14,32 @@ package models
 // }
 
 type Job struct {
-	username string
+	Username string
 
-	id int32
+	Id int32
 
-	score int32
+	Score int32
 
-	text string
+	Text string
 
-	time UnixTime
+	Time UnixTime
 
-	title string
+	Title string
 
-	entryType string
+	EntryType string
 
-	url string
+	Url string
 }
 
 func NewJob(username string, id int32, score int32, text string, time UnixTime, title string, url string) *Job {
 	return &Job{
-		username:  username,
-		id:        id,
-		score:     score,
-		text:      text,
-		time:      time,
-		title:     title,
-		entryType: "job",
-		url:       url,
+		Username:  username,
+		Id:        id,
+		Score:     score,
+		Text:      text,
+		Time:      time,
+		Title:     title,
+		EntryType: "job",
+		Url:       url,
 	}
 }
